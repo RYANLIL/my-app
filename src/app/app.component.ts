@@ -43,4 +43,26 @@ export class AppComponent {
     // return sum;
   }
   
+
+  ngOnInit(){
+    let that = this;
+    setTimeout(function() {     
+       that.addNewPart();
+      
+     }, 2000);
+
+
+  }
+
+  addNewPart(){
+    this.carparts.push({
+      "id": 3,
+      "name": "Padded Seats",
+      "description": "Super soft seats",
+      "inStock":0,
+      "price":3.99
+    });
+  }
+  
+  
 }
