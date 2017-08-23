@@ -1,39 +1,39 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Ultra Racing';
   carparts = [{
-    "id": 1,
-    "name": "Super Tires",
-    "description": "The very best tires",
-    "inStock":5,
-    "price":4.99
+    'id': 1,
+    'name': 'Super Tires',
+    'description': 'The very best tires',
+    'inStock': 5,
+    'price': 4.99
   },
   {
-    "id": 2,
-    "name": "Reinforced Shocks ",
-    "description": "Schocks made from kryptonite",
-    "inStock":4,
-    "price":2.99
+    'id': 2,
+    'name': 'Reinforced Shocks ',
+    'description': 'Schocks made from kryptonite',
+    'inStock': 4,
+    'price': 2.99
   },
   {
-    "id": 3,
-    "name": "Padded Seats",
-    "description": "Super soft seats",
-    "inStock":0,
-    "price":3.99
+    'id': 3,
+    'name': 'Padded Seats',
+    'description': 'Super soft seats',
+    'inStock': 0,
+    'price': 3.99
   }];
 
-  totalCarParts(){
-    //Java Script
-    //return this.carparts.reduce(function(prev,current){return prev + current.inStock;},0);
-    //TYPE SCRIPT
-    return this.carparts.reduce((prev,current)=>{return prev + current.inStock},0);
+  totalCarParts() {
+    // Java Script
+    // return this.carparts.reduce(function(prev,current){return prev + current.inStock;},0);
+    // TYPE SCRIPT
+    return this.carparts.reduce((prev, current) =>  prev + current.inStock, 0);
 
     // let sum = 0;
     // for(let carpar of this.carparts)
@@ -42,27 +42,22 @@ export class AppComponent {
     // }
     // return sum;
   }
-  
-
-  ngOnInit(){
-    let that = this;
-    setTimeout(function() {     
+  ngOnInit() {
+    const that = this;
+    setTimeout(function() {
        that.addNewPart();
-      
      }, 2000);
 
 
   }
 
-  addNewPart(){
+  addNewPart() {
     this.carparts.push({
-      "id": 3,
-      "name": "Padded Seats",
-      "description": "Super soft seats",
-      "inStock":0,
-      "price":3.99
+      'id': 3,
+      'name': 'Padded Seats',
+      'description': 'Super soft seats',
+      'inStock': 0,
+      'price': 3.99
     });
   }
-  
-  
 }
